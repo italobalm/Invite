@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quer sair comigo?</title>
+    <style>
+      #page {
+        background-color: rgb(46, 208, 219);
+      }
+
+      .box {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        height: 100vh;
+      }
+
+      .buttons {
+        display: block;
+        width: 200px;
+      }
+
+      button {
+        width: 100%;
+        margin: 10px 0;
+        padding: 10px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      .button-1 {
+        background-color: #4caf50; /* Cor para o botão "Sim" */
+        color: white;
+      }
+
+      .button-2 {
+        background-color: #ff6666; /* Cor para o botão "Não" */
+        border: none;
+        color: white;
+        transition: 0.3s;
+        width: 200px; /* Largura fixa */
+        height: 50px; /* Altura fixa */
+      }
+
+      .button-2:hover {
+        background-color: #ff4d4d;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="page">
+      <div class="box">
+        <h1>Você aceita sair com um loiro?</h1>
+        <div class="buttons">
+          <button class="button button-1" onclick="responder('sim')">
+            Sim
+          </button>
+          <button class="button button-2" id="nao" onmouseover="fugir()">
+            Não
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function responder(resposta) {
+        if (resposta === 'sim') {
+          alert('Perfeito! Resposta certa s2')
+        } else {
+          alert('Resposta errada')
+        }
+      }
+
+      function fugir() {
+        const button = document.getElementById('nao')
+        button.style.position = 'absolute'
+        button.style.top =
+          Math.random() * (window.innerHeight - button.offsetHeight) + 'px'
+        button.style.left =
+          Math.random() * (window.innerWidth - button.offsetWidth) + 'px'
+      }
+    </script>
+  </body>
+</html>
